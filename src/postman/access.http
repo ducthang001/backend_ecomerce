@@ -4,10 +4,10 @@
 
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: f800563e63b7ad29dac7f0fb5dddc2910aa45fb25ef5375ab2ec2691fd2ef8f7212c84aee9f2ea52b22d241d8a56ec44cc90bfab97a6980803346a382b620857
+x-api-key: 699c62d9cf1f480c75e6f76a926c09c020a167e82a7e36295b0b45587dd2455be3669eb1d067c09f7fd0bc0602ff9a631a8684d08de133d585883a078a86594d
 
 {
   "name": "ducthang",
-  "email": "ducthangdt069@gmail.com",
+  "email": "ducthangdt001@gmail.com",
   "password": "abc123@"
 }

@@ -1,6 +1,7 @@
 "use strict";
 
 const { SuccessResponse } = require("../core/success.response");
+const { product } = require("../models/product.model");
 const ProductService = require("../services/product.service");
 const ProductServiceV2 = require("../services/product.service.xxx");
 
@@ -20,6 +21,21 @@ class ProductController {
         ...req.body,
         product_shop: req.user.userId,
       }),
+    }).send(res);
+  };
+
+  // update Product
+  updateProduct = async (req, res, next) => {
+    new SuccessResponse({
+      message: "Update Product success!",
+      metadata: await ProductServiceV2.updateProduct(
+        req.body.product_type,
+        req.params.productId,
+        {
+          ...req.body,
+          product_shop: req.user.userId,
+        }
+      ),
     }).send(res);
   };
 
@@ -68,12 +84,29 @@ class ProductController {
     }).send(res);
   };
 
-  getListSearchPoduct = async (req, res, next) => {
+  getListSearchProduct = async (req, res, next) => {
     new SuccessResponse({
-      message: "Get list getListSearchPoduct success",
+      message: "Get list getListSearchProduct success",
       metadata: await ProductServiceV2.searchProducts(req.params),
     }).send(res);
   };
+
+  findAllProducts = async (req, res, next) => {
+    new SuccessResponse({
+      message: "Get list findAllProducts success",
+      metadata: await ProductServiceV2.findAllProducts(req.query),
+    }).send(res);
+  };
+
+  findProduct = async (req, res, next) => {
+    new SuccessResponse({
+      message: "Get finded Product success",
+      metadata: await ProductServiceV2.findProduct({
+        product_id: req.params.product_id,
+      }),
+    }).send(res);
+  };
+
   // end query //
 }
 

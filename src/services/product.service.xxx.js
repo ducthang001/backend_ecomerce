@@ -7,7 +7,7 @@ const {
   clothing,
   furniture,
 } = require("../models/product.model");
-const { insertInventory } = require("../models/repository/inventory.repo");
+const { insertInventory } = require("../models/repositories/inventory.repo");
 const {
   findAllDraftsForShop,
   publishProductByShop,
@@ -17,7 +17,7 @@ const {
   findAllProducts,
   findProduct,
   updateProductById,
-} = require("../models/repository/product.repo");
+} = require("../models/repositories/product.repo");
 const { removeUndefinedObject, updateNestedObjectParser } = require("../utils");
 
 // define factory class to create product

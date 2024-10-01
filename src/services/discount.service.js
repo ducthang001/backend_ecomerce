@@ -13,7 +13,7 @@ const { findAllProducts } = require("./product.service.xxx");
   3 - Get all discount codes [User | Shop]
   4 - Verify discount code [user]
   5 - Delete discount code [Admin | Shop]
-  6 - Canvel discount code [user]
+  6 - Cancel discount code [user]
 */
 
 class DiscountService {

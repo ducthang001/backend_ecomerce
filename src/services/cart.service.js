@@ -17,8 +17,8 @@ class CartService {
 
   // START REPO CART //
   static async createUserCart({userId, product}) {
-    const query = { cart_userId: userId, cart_state: 'active'},
-    updateOrInsert = {
+    const query = { cart_userId: userId, cart_state: 'active'}
+    const updateOrInsert = {
       $addToSet: {
         cart_products: product
       }
@@ -46,13 +46,13 @@ class CartService {
     // check cart ton tai hay khong?
     const userCart = await cart.findOne({ cart_userId: userId })
     if(!userCart) {
-      // create cart for User]
-
+      // create cart for [User]
       return await CartService.createUserCart({ userId, product })
     }
 
     // neu co gio hang roi nhung chua co san pham?
     if(!userCart.cart_products.length) {
+      // TODO: fix
       userCart.cart_products = [product]
       return await userCart.save()
     }
@@ -81,7 +81,6 @@ class CartService {
   */
 
   static async addToCartV2({ userId, shop_order_ids }) {
-    console.log(userId )
     const { productId, quantity, old_quantity } = shop_order_ids[0]?.item_products[0]
     // check product
     const foundProduct = await getProductById(productId)
@@ -91,7 +90,6 @@ class CartService {
     if(foundProduct.product_shop.toString() !== shop_order_ids[0]?.shopId) {
       throw new NotFoundError('Product do not belong to the shop')
     }
-
 
     if(quantity === 0) {
       // deleted 

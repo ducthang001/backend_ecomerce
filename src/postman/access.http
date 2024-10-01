@@ -4,7 +4,7 @@
 
 POST {{url_dev}}/shop/signup
 Content-Type: application/json
-x-api-key: 699c62d9cf1f480c75e6f76a926c09c020a167e82a7e36295b0b45587dd2455be3669eb1d067c09f7fd0bc0602ff9a631a8684d08de133d585883a078a86594d
+x-api-key: 5e5f876d9cfcc9228f302fa9afdc428b02700fa0c2b97992a88c399aa1d156e33a27e590eff31eafe676cf547ec98d7169175fbd00a7b0bc2679671bda7ddcc6
 
 {
   "name": "ducthang",
